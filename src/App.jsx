@@ -11,6 +11,10 @@ import Doctors from './pages/patient/Doctors';
 import MedicalRecords from './pages/patient/MedicalRecords';
 import Billing from './pages/patient/Billing';
 import Navbar from './components/common/Navbar';
+import DoctorSchedule from './pages/doctor/Schedule';
+import DoctorPatients from './pages/doctor/Patients';
+import DoctorPrescriptions from './pages/doctor/Prescriptions';
+import DoctorMedicalRecords from './pages/doctor/MedicalRecords';
 import './App.css';
 
 function ProtectedRoute({ children }) {
@@ -79,6 +83,39 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Billing />
+                  </ProtectedRoute>
+                } 
+              />
+              // doctor routes
+              <Route 
+                path="/schedule" 
+                element={
+                  <ProtectedRoute>
+                    <DoctorSchedule />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/patients" 
+                element={
+                  <ProtectedRoute>
+                    <DoctorPatients />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/prescriptions" 
+                element={
+                  <ProtectedRoute>
+                    <DoctorPrescriptions />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/medical-records" 
+                element={
+                  <ProtectedRoute>
+                    <DoctorMedicalRecords />
                   </ProtectedRoute>
                 } 
               />
