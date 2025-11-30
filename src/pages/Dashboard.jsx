@@ -126,6 +126,7 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
+import AdminDashboard from './admin/Dashboard';
 
 function Dashboard() {
   const { user } = useAuth();
@@ -234,7 +235,7 @@ function Dashboard() {
         <div className="card">
           <h3>User Management</h3>
           <p>Manage all users and permissions</p>
-          <Link to="/users" className="btn-secondary">Manage Users</Link>
+          <Link to="/admin/users" className="btn-secondary">Manage Users</Link>
         </div>
         <div className="card">
           <h3>System Settings</h3>
@@ -244,7 +245,7 @@ function Dashboard() {
         <div className="card">
           <h3>Reports</h3>
           <p>View system reports and analytics</p>
-          <Link to="/reports" className="btn-secondary">View Reports</Link>
+          <Link to="/admin/reports" className="btn-secondary">View Reports</Link>
         </div>
         <div className="card">
           <h3>My Profile</h3>
@@ -264,7 +265,7 @@ function Dashboard() {
       case 'staff':
         return renderStaffDashboard();
       case 'admin':
-        return renderAdminDashboard();
+        return <AdminDashboard />;
       default:
         return (
           <div className="error-message">

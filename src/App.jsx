@@ -15,6 +15,13 @@ import DoctorSchedule from './pages/doctor/Schedule';
 import DoctorPatients from './pages/doctor/Patients';
 import DoctorPrescriptions from './pages/doctor/Prescriptions';
 import DoctorMedicalRecords from './pages/doctor/MedicalRecords';
+import AdminDashboard from './pages/admin/Dashboard';
+import AdminUsers from './pages/admin/Users';
+import AdminAppointments from './pages/admin/Appointments';
+import AdminInventory from './pages/admin/Inventory';
+import AdminBilling from './pages/admin/Billing';
+import AdminReports from './pages/admin/Reports';
+import AdminNotifications from './pages/admin/Notifications';
 import './App.css';
 
 function ProtectedRoute({ children }) {
@@ -116,6 +123,62 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <DoctorMedicalRecords />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/dashboard" 
+                element={
+                  <ProtectedRoute>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/users" 
+                element={
+                  <ProtectedRoute>
+                    <AdminUsers />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/appointments" 
+                element={
+                  <ProtectedRoute>
+                    <AdminAppointments />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/inventory" 
+                element={
+                  <ProtectedRoute>
+                    <AdminInventory />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/billing" 
+                element={
+                  <ProtectedRoute>
+                    <AdminBilling />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/reports" 
+                element={
+                  <ProtectedRoute>
+                    <AdminReports />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/notifications" 
+                element={
+                  <ProtectedRoute>
+                    <AdminNotifications />
                   </ProtectedRoute>
                 } 
               />

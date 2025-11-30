@@ -99,11 +99,10 @@ function Navbar() {
       </div>
       
       <div className="nav-links">
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/profile">Profile</Link>
-        
         {userRole === 'patient' && (
           <>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/profile">Profile</Link>
             <Link to="/appointments">Appointments</Link>
             <Link to="/doctors">Doctors</Link>
           </>
@@ -111,6 +110,8 @@ function Navbar() {
         
         {userRole === 'doctor' && (
           <>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/profile">Profile</Link>
             <Link to="/schedule">Schedule</Link>
             <Link to="/patients">Patients</Link>
           </>
@@ -118,6 +119,8 @@ function Navbar() {
         
         {userRole === 'staff' && (
           <>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/profile">Profile</Link>
             <Link to="/appointments">Appointments</Link>
             <Link to="/patients">Patients</Link>
             <Link to="/billing">Billing</Link>
@@ -126,9 +129,14 @@ function Navbar() {
         
         {userRole === 'admin' && (
           <>
-            <Link to="/users">Users</Link>
-            <Link to="/reports">Reports</Link>
-            <Link to="/settings">Settings</Link>
+            {/* <Link to="/admin/dashboard">Dashboard</Link> */}
+            <Link to="/profile">Profile</Link>
+            <Link to="/admin/users">Users</Link>
+            <Link to="/admin/appointments">Appointments</Link>
+            <Link to="/admin/inventory">Inventory</Link>
+            <Link to="/admin/billing">Billing</Link>
+            <Link to="/admin/reports">Reports</Link>
+            <Link to="/admin/notifications">Notifications</Link>
           </>
         )}
       </div>
