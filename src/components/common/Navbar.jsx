@@ -139,6 +139,26 @@ function Navbar() {
             <Link to="/admin/notifications">Notifications</Link>
           </>
         )}
+
+        {userRole === 'lab_technician' && (
+          <>
+            <Link to="/lab-technician/dashboard">Dashboard</Link>
+            <Link to="/lab-technician/test-reports">Test Reports</Link>
+            <Link to="/lab-technician/attendance">Attendance</Link>
+            <Link to="/profile">Profile</Link>
+          </>
+        )}
+
+        {userRole === 'nurse' && (
+          <>
+            <Link to="/nurse/dashboard">Dashboard</Link>
+            <Link to="/nurse/vital-signs">Vital Signs</Link>
+            <Link to="/nurse/patient-arrival">Patient Arrival</Link>
+            <Link to="/nurse/medical-records">Medical Records</Link>
+            <Link to="/nurse/attendance">Attendance</Link>
+            <Link to="/profile">Profile</Link>
+          </>
+        )}
       </div>
       
       <div className="nav-user">

@@ -169,6 +169,81 @@ function Register() {
     </div>
   );
 
+  const renderLabTechnicianFields = () => (
+    <>
+      <div className="form-group">
+        <label>Employee ID:</label>
+        <input
+          type="text"
+          name="employee_id"
+          value={formData.employee_id}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
+      <div className="form-group">
+        <label>Department:</label>
+        <input
+          type="text"
+          name="department"
+          value={formData.department}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
+      <div className="form-group">
+        <label>Staff Type:</label>
+        <input
+          type="text"
+          name="staff_type"
+          value={formData.staff_type}
+          onChange={handleChange}
+          required
+        />
+      </div>
+    </>
+  );
+
+  const renderNurseFields = () => (
+    <>
+      <div className="form-group">
+        <label>Employee ID:</label>
+        <input
+          type="text"
+          name="employee_id"
+          value={formData.employee_id}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
+      <div className="form-group">
+        <label>Department:</label>
+        <input
+          type="text"
+          name="department"
+          value={formData.department}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
+      <div className="form-group">
+        <label>Staff Type:</label>
+        <input
+          type="text"
+          name="staff_type"
+          value={formData.staff_type}
+          onChange={handleChange}
+          defaultValue="nurse" // Set default to "nurse"
+          required
+        />
+      </div>
+    </>
+  );
+
   return (
     <div className="auth-container">
       <div className="auth-form">
@@ -183,6 +258,8 @@ function Register() {
               <option value="doctor">Doctor</option>
               <option value="staff">Staff</option>
               <option value="admin">Admin</option>
+              <option value="lab_technician">Lab Technician</option>
+              <option value="nurse">Nurse</option>
             </select>
           </div>
           
@@ -267,13 +344,14 @@ function Register() {
               <option value="">Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="other">Other</option>
             </select>
           </div>
           
           {formData.role === 'patient' && renderPatientFields()}
           {formData.role === 'doctor' && renderDoctorFields()}
           {formData.role === 'staff' && renderStaffFields()}
+          {formData.role === 'lab_technician' && renderLabTechnicianFields()}
+          {formData.role === 'nurse' && renderNurseFields()}
           
           <button type="submit" disabled={loading}>
             {loading ? 'Registering...' : 'Register'}

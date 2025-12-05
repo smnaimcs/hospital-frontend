@@ -22,6 +22,14 @@ import AdminInventory from './pages/admin/Inventory';
 import AdminBilling from './pages/admin/Billing';
 import AdminReports from './pages/admin/Reports';
 import AdminNotifications from './pages/admin/Notifications';
+import LabTechnicianDashboard from './pages/lab-technician/Dashboard';
+import LabTechnicianTestReports from './pages/lab-technician/TestReports';
+import LabTechnicianAttendance from './pages/lab-technician/Attendance';
+import NurseDashboard from './pages/nurse/Dashboard';
+import NurseVitalSigns from './pages/nurse/VitalSigns';
+import NursePatientArrival from './pages/nurse/PatientArrival';
+import NurseMedicalRecords from './pages/nurse/MedicalRecords';
+import NurseAttendance from './pages/nurse/Attendance';
 import './App.css';
 
 function ProtectedRoute({ children }) {
@@ -182,6 +190,73 @@ function App() {
                   </ProtectedRoute>
                 } 
               />
+
+              <Route 
+                path="/lab-technician/dashboard" 
+                element={
+                  <ProtectedRoute>
+                    <LabTechnicianDashboard />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/lab-technician/test-reports" 
+                element={
+                  <ProtectedRoute>
+                    <LabTechnicianTestReports />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/lab-technician/attendance" 
+                element={
+                  <ProtectedRoute>
+                    <LabTechnicianAttendance />
+                  </ProtectedRoute>
+                } 
+              />
+
+              <Route 
+                path="/nurse/dashboard" 
+                element={
+                  <ProtectedRoute>
+                    <NurseDashboard />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/nurse/vital-signs" 
+                element={
+                  <ProtectedRoute>
+                    <NurseVitalSigns />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/nurse/patient-arrival" 
+                element={
+                  <ProtectedRoute>
+                    <NursePatientArrival />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/nurse/medical-records" 
+                element={
+                  <ProtectedRoute>
+                    <NurseMedicalRecords />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/nurse/attendance" 
+                element={
+                  <ProtectedRoute>
+                    <NurseAttendance />
+                  </ProtectedRoute>
+                } 
+              />
+
               <Route path="/" element={<Navigate to="/dashboard" />} />
             </Routes>
           </main>
